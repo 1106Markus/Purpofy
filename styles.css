@@ -10,19 +10,26 @@
   position: relative;
 }
 
-button {
-  background: none;
-  color: purple;
-  border: 2px solid;
-  padding: 1em 2em;
-  font-size: 2em;
-  transition: all 0.35s;
+body {
+ background: linear-gradient(167.21deg, rgba(200, 254, 247, 0.6) -7.83%, rgba(200, 225, 254, 0.28125) 51.54%, rgba(200, 254, 247, 0) 103.93%);
+ height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  );
 }
 
-button:hover {
-  border-color: #f1ff5c;
-  color: greenyellow;
-  box-shadow: 0 0.5em 0.5em -0.7em #f1ff5c;
-  transform: translateY(-0.35em);
-  cursor: pointer;
+.btn {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  background: #8E4FC0 !important;
 }
+
+.content {
+  left: 5%;
+  position: relative;
+  margin: 150px;
+}
+
+
