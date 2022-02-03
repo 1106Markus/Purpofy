@@ -1,5 +1,28 @@
-h1 {
-    color: #16db93;
-    font-size: 100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image: url(); /* here goes the background image for the website */
+  background-position: center;
+  background-size: cover;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+button {
+  background: none;
+  color: purple;
+  border: 2px solid;
+  padding: 1em 2em;
+  font-size: 2em;
+  transition: all 0.35s;
+}
+
+button:hover {
+  border-color: #f1ff5c;
+  color: greenyellow;
+  box-shadow: 0 0.5em 0.5em -0.7em #f1ff5c;
+  transform: translateY(-0.35em);
+  cursor: pointer;
 }
