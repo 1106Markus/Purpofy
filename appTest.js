@@ -1,3 +1,3 @@
-function sendToQuestionaire() {
-    window.location.href = 'questionaire.html';
+function sendToQuestionnaire() {
+    window.location.href = 'questionnaire.html';
 }
