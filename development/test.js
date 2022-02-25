@@ -1,61 +1,61 @@
 var prompts = [
 {
-	prompt: 'I find it difficult to introduce myself to people',
+	prompt: 'Do you find it difficult to introduce yourself to people?',
 	weight: -1,
 	class: 'group0'
 },
 {
-	prompt: 'I get so lost in my thoughts I ignore or forget my surroundings',
+	prompt: 'Do you get so lost in your thoughts that you ignore or forget your surroundings?',
 	weight: -1,
 	class: 'group1'
 },
 {
-	prompt: 'I do not usually initiate conversations',
+	prompt: 'To what degree are you likely to engage in Multitasking ?',
 	weight: -1,
 	class: 'group2'
 },
 {
-	prompt: 'I prefer not to engage with people who seem angry or upset',
+	prompt: 'Does the way other perceive you plays an important role for you?',
 	weight: -1,
 	class: 'group3'
 },
 {
-	prompt: 'I choose my friends carefully',
+	prompt: 'How organised are you in your daily life?',
 	weight: -1,
 	class: 'group4'
 },
 {
-	prompt: 'I find it difficult to tell stories about myself',
+	prompt: 'Do you encounter difficulties while expressing emotions?',
 	weight: -1,
 	class: 'group5'
 },
 {
-	prompt: 'I am usually highly motivated and energetic',
+	prompt: 'Do you have problems making important decisions?',
 	weight: 1,
 	class: 'group6'
 },
 {
-	prompt: 'I find it easy to walk up to a group of people and join in conversation',
+	prompt: 'Do you set goals for yourself?',
 	weight: 1,
 	class: 'group7'
 },
 {
-	prompt: 'Being adaptable is more important than being organized',
+	prompt: 'How likely are you to chase and achieve these goals?',
 	weight: 1,
 	class: 'group8'
 },
 {
-	prompt: 'I care more about making sure no one gets upset than winning a debate',
+	prompt: 'Do you care more about making sure no one gets upset than winning a debate?',
 	weight: 1,
 	class: 'group9'
 },
 {
-	prompt: 'I often do not feel I have to justify myself to people',
+	prompt: 'How sympathetic are you with towards other people\'s problems?',
 	weight: 1,
 	class: 'group10'
 },
 {
-	prompt: 'I would rather improvise than spend time coming up with a detailed plan',
+	prompt: 'Would you rather improvise than spend time coming up with a detailed plan?',
 	weight: 1,
 	class: 'group11'
 }
