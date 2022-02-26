@@ -1,61 +1,61 @@
 var prompts = [
 {
-	prompt: 'Do you find it difficult to introduce yourself to people?',
-	weight: -1,
+	prompt: 'You find it difficult to introduce yourself to people?',
+	weight: 1,
 	class: 'group0'
 },
 {
-	prompt: 'Do you get so lost in your thoughts that you ignore or forget your surroundings?',
-	weight: -1,
+	prompt: 'You get so lost in your thoughts that you ignore or forget your surroundings?',
+	weight: 1,
 	class: 'group1'
 },
 {
-	prompt: 'To what degree are you likely to engage in Multitasking ?',
-	weight: -1,
+	prompt: 'You are likely to engage in Multitasking?',
+	weight: 1,
 	class: 'group2'
 },
 {
-	prompt: 'Does the way other perceive you plays an important role for you?',
-	weight: -1,
+	prompt: 'The way others perceive you plays an important role for you?',
+	weight: 1,
 	class: 'group3'
 },
 {
-	prompt: 'How organised are you in your daily life?',
-	weight: -1,
+	prompt: 'You are very organised in your daily life?',
+	weight: 1,
 	class: 'group4'
 },
 {
-	prompt: 'Do you encounter difficulties while expressing emotions?',
-	weight: -1,
+	prompt: 'You encounter difficulties while expressing emotions?',
+	weight: 1,
 	class: 'group5'
 },
 {
-	prompt: 'Do you have problems making important decisions?',
+	prompt: 'You have problems making important decisions?',
 	weight: 1,
 	class: 'group6'
 },
 {
-	prompt: 'Do you set goals for yourself?',
+	prompt: 'You often set goals for yourself?',
 	weight: 1,
 	class: 'group7'
 },
 {
-	prompt: 'How likely are you to chase and achieve these goals?',
+	prompt: 'You often chase and achieve these goals?',
 	weight: 1,
 	class: 'group8'
 },
 {
-	prompt: 'Do you care more about making sure no one gets upset than winning a debate?',
+	prompt: 'You care more about making sure no one gets upset than winning a debate?',
 	weight: 1,
 	class: 'group9'
 },
 {
-	prompt: 'How sympathetic are you with towards other people\'s problems?',
+	prompt: 'You are sympathetic towards other people\'s problems?',
 	weight: 1,
 	class: 'group10'
 },
 {
-	prompt: 'Would you rather improvise than spend time coming up with a detailed plan?',
+	prompt: 'You wouuld rather improvise than spend time coming up with a detailed plan of action?',
 	weight: 1,
 	class: 'group11'
 }
@@ -109,20 +109,6 @@ function createPromptItems() {
 }
 
 // For each possible value, create a button for each to be inserted into each li of the quiz
-// function createValueButtons() {
-	
-// 	for (var li_index = 0; li_index < prompts.length; li_index++) {
-// 		for (var i = 0; i < prompt_values.length; i++) {
-// 			var val_button = document.createElement('button');
-// 			var val_text = document.createTextNode(prompt_values[i].value);
-
-// 			val_button.setAttribute('class', 'value-btn btn ' + prompt_values[i].class);
-// 			val_button.appendChild(val_text);
-
-// 			document.getElementsByClassName('prompt')[li_index].appendChild(val_button);
-// 		}
-// 	}
-// }
 function createValueButtons() {
 	for (var li_index = 0; li_index < prompts.length; li_index++) {
 		var group = document.createElement('div');
@@ -194,13 +180,11 @@ $('.value-btn').mousedown(function () {
 		$(this).removeClass('active');
 		total -= (findPromptWeight(prompts, this_group) * findValueWeight(prompt_values, $(this).text()));
 	} else {
-		// $('[class='thisgroup).prop('checked', false);
+		
 		total -= (findPromptWeight(prompts, this_group) * findValueWeight(prompt_values, $('.'+this_group+'.active').text()));
-		// console.log($('.'+this_group+'.active').text());
+	
 		$('.'+this_group).removeClass('active');
 
-		// console.log('group' + findValueWeight(prompt_values, $('.'+this_group).text()));
-		// $(this).prop('checked', true);
 		$(this).addClass('active');
 		total += (findPromptWeight(prompts, this_group) * findValueWeight(prompt_values, $(this).text()));
 	}
@@ -216,33 +200,53 @@ $('#submit-btn').click(function () {
 	$('.results').removeClass('hide');
 	$('.results').addClass('show');
 	
-	if(total < 0) {
+	if(total >= 31 && total <= 60) {
 		// document.getElementById('intro-bar').style.width = ((total / 60) * 100) + '%';
 		// console.log(document.getElementById('intro-bar').style.width);
 		// document.getElementById('intro-bar').innerHTML= ((total / 60) * 100) + '%';
-		document.getElementById('results').innerHTML = '<b>You are introverted!</b><br><br>\
-		Introverts are tricky to understand, since it’s so easy for us to assume that introversion is the same as being shy, when, in fact, introverts are simply people who find it tiring to be around other people.\n\
+		document.getElementById('results').innerHTML = '<b>You are Type A Personality!</b><br><br>\
+		Type A individuals are multitasking, ambitious, proactive, organized and status-conscious individuals. In addition, they are sympathetic, sensitive, truthful and always eager to help others.\n\
 <br><br>\
-I love this explanation of an introvert’s need to be alone:\n\
+Type A people are friendly and caring goal-driven and motivated individuals.\n\n\
 <br><br>\
-For introverts, to be alone with our thoughts is as restorative as sleeping, as nourishing as eating.\n\n\
+They are also easily frustrated and have a low tolerance for incompetence with people or projects.\
 <br><br>\
-Introverted people are known for thinking things through before they speak, enjoying small, close groups of friends and one-on-one time, needing time alone to recharge, and being upset by unexpected changes or last-minute surprises. Introverts are not necessarily shy and may not even avoid social situations, but they will definitely need some time alone or just with close friends or family after spending time in a big crowd.\
-		';
-	} else if(total > 0) {
-		document.getElementById('results').innerHTML = '<b>You are extroverted!</b><br><br>\
-		On the opposite side of the coin, people who are extroverted are energized by people. They usually enjoy spending time with others, as this is how they recharge from time spent alone focusing or working hard.\
+The entire purpose of personality tests is that the tests can be used for self-reflection and helping individuals attempt to understand themselves towards improving their interaction with others.\
 <br><br>\
-I like how this extrovert explains the way he/she gains energy from being around other people:\
+Above all, personality tests show the strengths and weaknesses of an individual. With this key information, you can now focus on amplifying your strengths and suppressing your weaknesses.'
+		;
+	} else if(total >= 1 && total <= 31) {
+		document.getElementById('results').innerHTML = '<b>You are Type B Personality!</b><br><br>\
+		Type B individuals are laid-back with the ability to relax and enjoy small accomplishments. In addition, they tend to be calm, patient individuals and are generally uncompetitive as they often take the "win some, lose some" approach. They are rarely stressed and hardly ever frustrated with people or projects.\
 <br><br>\
-When I am among people, I make eye contact, smile, maybe chat if there’s an opportunity (like being stuck in a long grocery store line). As an extrovert, that’s a small ‘ping’ of energy, a little positive moment in the day.';
-	} else {
-		document.getElementById('results').innerHTML = '<b>You are ambiverted!</b><br><br>\
-		Since introverts and extroverts are the extremes of the scale, the rest of us fall somewhere in the middle. Many of us lean one way or the other, but there are some who are quite balanced between the two tendencies. These people are called ambiverts.\
+Here is how you really know though. If you read through painstakingly the above line by line, you are likely an A. If you skimmed through the text, you are probably a B.\
 <br><br>\
-So let’s look at how an ambivert compares.\
+The entire purpose of personality tests is that the tests can be used for self-reflection and helping individuals attempt to understand themselves towards improving their interaction with others.\
 <br><br>\
-Ambiverts exhibit both extroverted and introverted tendencies. This means that they generally enjoy being around people, but after a long time this will start to drain them. Similarly, they enjoy solitude and quiet, but not for too long. Ambiverts recharge their energy levels with a mixture of social interaction and alone time.'
+Above all, personality tests show the strengths and weaknesses of an individual. With this key information, you can now focus on amplifying your strengths and suppressing your weaknesses.';
+	} else if(total < 0 && total >= -30) {
+		document.getElementById('results').innerHTML = '<b>You are Type C Personality!</b><br><br>\
+		Type C individuals have a hard time sharing their emotions, feelings and/or needs with others. They are considered to be emotionally repressed.\
+<br><br>\
+They find it extremely difficult when it comes to making decisions of low and/or large magnitude.\
+<br><br>\
+They are naturally people pleasers.\
+<br><br>\
+The entire purpose of personality tests is that the tests can be used for self-reflection and helping individuals attempt to understand themselves towards improving their interaction with others.\
+<br><br>\
+Above all, personality tests show the strengths and weaknesses of an individual. With this key information, you can now focus on amplifying your strengths and suppressing your weaknesses.'
+	} else if(total < -30 && total >= -60) {
+		document.getElementById('results').innerHTML = '<b>You are Type D Personality!</b><br><br>\
+		The Type D individuals are usually a combination of stressed, angry, worried, hostile and tense. They run a strict unchanged pattern of lifestyle and are averse to making changes.\
+<br><br>\
+For the Type D individual, security is a top priority.\
+<br><br>\
+Whether it\'s physical security and/or job security.\
+<br><br>\
+The entire purpose of personality tests is that the tests can be used for self-reflection and helping individuals attempt to understand themselves towards improving their interaction with others.\
+<br><br>\
+Above all, personality tests show the strengths and weaknesses of an individual. With this key information, you can now focus on amplifying your strengths and suppressing your weaknesses.'
+;
 	}
 
 	// Hide the quiz after they submit their results
