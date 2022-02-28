@@ -215,7 +215,7 @@ The entire purpose of personality tests is that the tests can be used for self-r
 <br><br>\
 Above all, personality tests show the strengths and weaknesses of an individual. With this key information, you can now focus on amplifying your strengths and suppressing your weaknesses.'
 		;
-	} else if(total >= 1 && total <= 31) {
+	} else if(total >= 1 && total <= 30) {
 		document.getElementById('results').innerHTML = '<b>You are Type B Personality!</b><br><br>\
 		Type B individuals are laid-back with the ability to relax and enjoy small accomplishments. In addition, they tend to be calm, patient individuals and are generally uncompetitive as they often take the "win some, lose some" approach. They are rarely stressed and hardly ever frustrated with people or projects.\
 <br><br>\
