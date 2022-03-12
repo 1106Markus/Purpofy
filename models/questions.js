@@ -1,26 +1,43 @@
+const { append } = require('express/lib/response');
 const { default: mongoose } = require('mongoose');
+
 const questionsSchema = new mongoose.Schema({
-    questionOne: String,
-    questionTwo: String,
-    questionThree: String,
-    questionFour: String,
-    questionFive: String,
-    questionSix: String,
-    questionSeven: String,
-    questionEight: String,
-    questionNine: String,
-    questionTen: String,
+    text: String,
+    order: Number,
+    weight: Number,
 });
 
-const questionsArray = new mongoose.Schema({
-    questions: [questionsSchema],
-})
-
 const Question = mongoose.model('Question', questionsSchema);
-const firstQuestion = new Question({questionOne: "Test 123"});
-firstQuestion.save();
-
-const questArray = mongoose.model('QuestionArray', questionsArray);
-const questionsForQ = new questArray({firstQuestion});
-
 model.exports = Question;
+
+const questions = [
+    {
+        text: "Here goes first question",
+        order: 1,
+        weight: 0
+    },
+    {
+        text: "Second question",
+        order: 2,
+        weight: 0
+    }
+]
+
+// should I do route with query
+
+
+Question.insertMany(questions);
+
+
+
+
+/*
+const questions = ["Hello"];
+
+questions.forEach((question, index) => {
+    const firstQuestion = new Question({ text: question, order: index });
+    firstQuestion.save();
+});
+
+const allQuestions = Question.find({});
+*/

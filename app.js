@@ -5,6 +5,7 @@ const { MongoClient } = require('mongodb');
 //const { dirname } = require('path');
 const path = require('path');
 const { default: mongoose } = require('mongoose');
+const questions = require('Question');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
@@ -29,8 +30,14 @@ app.get("/dashboard", (req, res) => {
     res.render('dashboard')
 })
 
+// attempt
+app.get("/questionnaire", async (req, res) => {
+    const questionsToLoad = await questions.find({});
+    res.render('questionnaire', { questions })
+})
+
 app.listen(8080, async() => {
-    const url = 'mongodb+srv://Admin01:SiR0JngY2wkIB0cF@cluster0.bsxtm.mongodb.net/test';
+const url = 'mongodb+srv://Admin01:SiR0JngY2wkIB0cF@cluster0.bsxtm.mongodb.net/test';
 const client = new MongoClient(url);
 
 // Database Name
@@ -45,25 +52,4 @@ const dbName = 'test';
   }
     console.log("Server is up and running on 8080");
 })
-
-const questionsSchema = new mongoose.Schema({
-    questionOne: String,
-    questionTwo: String,
-    questionThree: String,
-    questionFour: String,
-    questionFive: String,
-    questionSix: String,
-    questionSeven: String,
-    questionEight: String,
-    questionNine: String,
-    questionTen: String,
-});
-
-const Question = mongoose.model('Question', questionsSchema);
-const firstQuestion = new Question({questionOne: "Test 123"});
-firstQuestion.save();
-
-
-
-
 
