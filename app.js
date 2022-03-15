@@ -5,7 +5,8 @@ const { MongoClient } = require('mongodb');
 //const { dirname } = require('path');
 const path = require('path');
 const { default: mongoose } = require('mongoose');
-const questions = require('Question');
+const questions = require('./models/questions');
+const mongo = require("./models");
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
@@ -22,34 +23,32 @@ app.get("/", (req, res) => {
     res.render('home')// should respond with index.html file
 })
 
-app.get("/questionnaire", (req, res) => {
-    res.render('questionnaire')
-})
-
 app.get("/dashboard", (req, res) => {
     res.render('dashboard')
 })
 
 // attempt
+
 app.get("/questionnaire", async (req, res) => {
     const questionsToLoad = await questions.find({});
-    res.render('questionnaire', { questions })
+    console.log("a", questions)
+    res.render('questionnaire', { questions: questionsToLoad })
 })
 
+app.get("/answers", (req, res) => {
+    console.log("data", req.params);
+
+    req.params.answers.forEach(answer => {
+        const newAnswer = new AnswerModel();
+        newAnswer.order = answer.order;
+        newAnswer.text = answer.text;
+        newAnswer.value = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"][answer.text] - 2;
+    });
+});
+
 app.listen(8080, async() => {
-const url = 'mongodb+srv://Admin01:SiR0JngY2wkIB0cF@cluster0.bsxtm.mongodb.net/test';
-const client = new MongoClient(url);
-
-// Database Name
-const dbName = 'test';
-
-  try {
-      await client.connect();
-      console.log('Connected successfully to server');
-      const db = client.db(dbName);
-  } catch(error) {
-      console.error(error);
-  }
+    console.log("test");
+    mongo.getInstance().initialize();
     console.log("Server is up and running on 8080");
 })
 

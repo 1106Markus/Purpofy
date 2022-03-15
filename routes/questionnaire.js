@@ -20,7 +20,7 @@ var prompts = [
 	class: 'group3'
 },
 {
-	prompt: 'You are very organised in your daily life?',
+	prompt: 'You are very organized in your daily life?',
 	weight: 1,
 	class: 'group4'
 },
