@@ -27,6 +27,18 @@ app.get("/dashboard", (req, res) => {
     res.render('dashboard')
 })
 
+app.get("/registration", (req, res) => {
+    res.render('registration')
+})
+
+app.get("/login", (req, res) => {
+    res.render('login')
+})
+
+app.get("/change-password", (req, res) => {
+    res.render('change-password')
+})
+
 // attempt
 
 app.get("/questionnaire", async (req, res) => {
