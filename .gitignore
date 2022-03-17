@@ -1,3 +1,4 @@
+node_modules/*
 nodejs_restapi/node_modules/.package-lock.json
 nodejs_restapi/node_modules/.bin/mime
 nodejs_restapi/node_modules/.bin/mime.cmd
