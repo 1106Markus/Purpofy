@@ -1,4 +1,6 @@
-
+function sendToDashboard() {
+    window.location.href = '/dashboard';
+}
 
 
 
