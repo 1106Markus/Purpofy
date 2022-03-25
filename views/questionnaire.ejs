@@ -121,9 +121,9 @@
                                 <span class="fa fa-close" aria-hidden="true"></span>
                             </a>
                             <ul class="vertical m-4" style="flex-direction: column;">
-                                <li><a class="nav-link active" href="#">Home</a></li>
+                                <li><a class="nav-link active" href="/">Home</a></li>
                                 <li><a class="nav-link" href="#">Questionnaire</a></li>
-                                <li><a class="nav-link" href="#">Dashboard</a></li>
+                                <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
                                 <li><a class="nav-link active" href="#">Messenger</a></li>
                                 <li><a class="nav-link" href="#">Your Goal</a></li>
                                 <li><a class="nav-link" href="#">Events</a></li>
@@ -172,7 +172,7 @@
                                 <form>
                                     <% for(let i=0; i < questions.length; i ++) { %>
                                         <div class="row row_question">
-                                                <%= questions[i].text %>
+                                                <%= questions[i].text %>   
                                         </div>
                                         <div class=" row row_button" >
                                             <button class="btn" id="question_button">Strongly Disagree</button>
@@ -186,7 +186,7 @@
                                 </form>
 
 
-                                <button id="retake-btn" class="hide btn btn-primary btn-lg">Retake Quiz</button>
+                                <!--<button id="retake-btn" class="hide btn btn-primary btn-lg">Retake Quiz</button>-->
                         </div>
 
                     </div>
